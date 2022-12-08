@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import data from '../data.js';
 
 const Quiz = () => {
 	const answers = new Array(64);
+	const [errorMessage, setErrorMessage] = useState('');
 
 	function onInputChange(e) {
 		answers[e.target.name - 1] = parseInt(e.target.parentNode.textContent);
 	};
 	function onSubmit(event) {
 		if (answers.includes(undefined)) {
-			console.log('please fill out all questions');
+			setErrorMessage('Please select an answer for all questions.');
 			return;
 		}
+		setErrorMessage('');
 		function findLargest3(array) {
 			console.log(array);
 			array.sort((a, b) => parseInt(a.substring(2)) < parseInt(b.substring(2)) ? 1 : parseInt(a.substring(2)) > parseInt(b.substring(2)) ? -1 : 0);
@@ -53,6 +55,7 @@ const Quiz = () => {
 				</li>
 			})}
 		</ul>
+		<span id='errorMessage'>{errorMessage}</span>
 		<button onClick={onSubmit}>Submit</button>
       </>
    )
