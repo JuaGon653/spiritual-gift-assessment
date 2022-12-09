@@ -47,7 +47,7 @@ const HomePage = () => {
             <br />
             Remember, a spiritual gifting isn't something you earn or learn. It's the appearance of the Holy Spirit in you, through a special gift! Approach this assessment with joy and wonder, looking forward to the ways God has uniquely gifted your team to be a part of his awesome works!</p>
             <Link to='/quiz'>
-               <button class="btn">Take Assessment</button> 
+               <button className="btn">Take Assessment</button> 
             </Link>
             
         </section>
