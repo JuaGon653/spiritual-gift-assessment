@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import data from '../data.js';
+import ResultCard from '../components/ResultCard.js';
 
 const Quiz = () => {
 	const answers = new Array(64);
@@ -126,19 +127,7 @@ const Quiz = () => {
 		</ul>
 		<span id='errorMessage'>{errorMessage}</span>
 		<button className='btn' onClick={onSubmit}>Submit</button>
-		<div className='pt-5'>
-			<div className="card">
-				<h5 className="card-header">Results</h5>
-				<div className="card-body">
-					<ul className='list-group'>
-						<li className='list-group-item'>1. {results[0]}</li>
-						<li className='list-group-item'>2. {results[1]}</li>
-						<li className='list-group-item'>3. {results[2]}</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		
+		<ResultCard results={results} />
       </div>
    )
 };
