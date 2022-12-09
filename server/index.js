@@ -21,7 +21,7 @@ app.post('/quiz', async (req, res) => {
         const { firstname, lastname, results } = req.body;
 
         const auth = new google.auth.GoogleAuth({
-            keyFile: "credentials.json",
+            keyFile: "google-credentials.json",
             scopes: ["https://www.googleapis.com/auth/spreadsheets"]
         });
 
