@@ -16,71 +16,71 @@ const Quiz = () => {
 			return;
 		}
 		setErrorMessage('');
-		function findLargest3(array) {
+		function sortHighToLow(array) {
 			array.sort((a, b) => parseInt(a.substring(2)) < parseInt(b.substring(2)) ? 1 : parseInt(a.substring(2)) > parseInt(b.substring(2)) ? -1 : 0);
 			return array;
 		}
-		const highestToLowest = new Array(16)
+		const unsortedList = new Array(16)
 		const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p'];
 
-		for (let i = 0; i < highestToLowest.length; i++) {
-			let aIndex = Math.trunc(i / 4); 
-			highestToLowest[i] = `${alphabet[aIndex]} ${answers[i] + answers[i+16] + answers[i+32] + answers[i+48]}` 
+		for (let i = 0; i < unsortedList.length; i++) { 
+			unsortedList[i] = `${alphabet[i]} ${answers[i] + answers[i+16] + answers[i+32] + answers[i+48]}` 
 		}
-		const threeResults = findLargest3(highestToLowest).slice(0,3);
-		for(let i = 0; i < threeResults.length; i++) {
-			switch (threeResults[i].charAt(0)) {
+		const sortedList = sortHighToLow(unsortedList);
+		for(let i = 0; i < sortedList.length; i++) {
+			switch (sortedList[i].charAt(0)) {
 				case 'a':
-					threeResults[i] = 'Wisdom';
+					sortedList[i] = 'Wisdom ' + sortedList[i].substring(2);
 					break;
 				case 'b':
-					threeResults[i] = 'Teaching';
+					sortedList[i] = 'Teaching ' + sortedList[i].substring(2);
 					break;
 				case 'c':
-					threeResults[i] = 'Shepherding';
+					sortedList[i] = 'Shepherding ' + sortedList[i].substring(2);
 					break;
 				case 'd':
-					threeResults[i] = 'Prophecy';
+					sortedList[i] = 'Prophecy ' + sortedList[i].substring(2);
 					break;
 				case 'e':
-					threeResults[i] = 'Mercy';
+					sortedList[i] = 'Mercy ' + sortedList[i].substring(2);
 					break;
 				case 'f':
-					threeResults[i] = 'Leadership';
+					sortedList[i] = 'Leadership ' + sortedList[i].substring(2);
 					break;
 				case 'g':
-					threeResults[i] = 'Knowledge';
+					sortedList[i] = 'Knowledge ' + sortedList[i].substring(2);
 					break;
 				case 'h':
-					threeResults[i] = 'intercession';
+					sortedList[i] = 'Intercession ' + sortedList[i].substring(2);
 					break;
 				case 'i':
-					threeResults[i] = 'Hospitality';
+					sortedList[i] = 'Hospitality ' + sortedList[i].substring(2);
 					break;
 				case 'j':
-					threeResults[i] = 'Helps';
+					sortedList[i] = 'Helps ' + sortedList[i].substring(2);
 					break;
 				case 'k':
-					threeResults[i] = 'Giving';
+					sortedList[i] = 'Giving ' + sortedList[i].substring(2);
 					break;
 				case 'l':
-					threeResults[i] = 'Faith';
+					sortedList[i] = 'Faith ' + sortedList[i].substring(2);
 					break;
 				case 'm':
-					threeResults[i] = 'Evangelism';
+					sortedList[i] = 'Evangelism ' + sortedList[i].substring(2);
 					break;
 				case 'n':
-					threeResults[i] = 'Discernment';
+					sortedList[i] = 'Encouragement ' + sortedList[i].substring(2);
 					break;
 				case 'o':
-					threeResults[i] = 'Administration';
+					sortedList[i] = 'Discernment ' + sortedList[i].substring(2);
 					break;
 				case 'p':
-					threeResults[i] = 'Wisdom';
+					sortedList[i] = 'Administration ' + sortedList[i].substring(2);
 					break;
 			}
 		};
-		setResults(threeResults);
+		console.log(sortedList);
+		setResults(sortedList);
 		for(let i = 1; i <= answers.length; i++) {
 			for(let x = 0; x < document.getElementsByName(i).length; x++) {
 				document.getElementsByName(i)[x].checked = false;
