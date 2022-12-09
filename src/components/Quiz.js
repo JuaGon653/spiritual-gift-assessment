@@ -78,8 +78,13 @@ const Quiz = () => {
 					threeResults[i] = 'Wisdom';
 					break;
 			}
-		}
+		};
 		setResults(threeResults);
+		for(let i = 1; i <= answers.length; i++) {
+			for(let x = 0; x < document.getElementsByName(i).length; x++) {
+				document.getElementsByName(i)[x].checked = false;
+			}
+		}
 	};
 
    return (
