@@ -131,9 +131,9 @@ const Quiz = () => {
 				<h5 className="card-header">Results</h5>
 				<div className="card-body">
 					<ul className='list-group'>
-						<li className='list-group-item'>{results[0]}</li>
-						<li className='list-group-item'>{results[1]}</li>
-						<li className='list-group-item'>{results[2]}</li>
+						<li className='list-group-item'>1. {results[0]}</li>
+						<li className='list-group-item'>2. {results[1]}</li>
+						<li className='list-group-item'>3. {results[2]}</li>
 					</ul>
 				</div>
 			</div>
