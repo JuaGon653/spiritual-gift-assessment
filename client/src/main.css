@@ -98,3 +98,17 @@ hr {
 .card {
     min-width: 300px
 }
+#result-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 10px;
+    height: 150px;
+}
+.card-input {
+    height: 35px;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 5px;
+    padding-left: 8px;
+}
