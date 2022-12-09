@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Quiz from './components/Quiz.js';
+import Quiz from './pages/Quiz.js';
 import HomePage from './pages/HomePage.js';
 import './main.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
