@@ -9,9 +9,11 @@ const ResultCard = ({ results }) => {
 				<h5 className="card-header">Results</h5>
 				<div className="card-body">
 					<ul className='list-group'>
-						<li className='list-group-item'>1. {results[0]}</li>
-						<li className='list-group-item'>2. {results[1]}</li>
-						<li className='list-group-item'>3. {results[2]}</li>
+                        {
+                            results.map((result, index) => {
+                                return <li className='list-group-item' key={index + 1 }>{index + 1}. {result}</li>
+                            })
+                        }
 					</ul>
                     {
                         results[0] === "Submit A Test For Results" ? '' : (
