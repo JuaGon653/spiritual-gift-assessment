@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import data from '../data.js';
 import ResultCard from '../components/ResultCard.js';
 
@@ -6,6 +6,10 @@ const Quiz = () => {
 	const answers = new Array(64);
 	const [errorMessage, setErrorMessage] = useState('');
 	const [results, setResults] = useState(['Submit A Test For Results', 'Submit A Test For Results', 'Submit A Test For Results']);
+
+	useEffect(() => {
+		window.scroll({ top: 0, left: 0 });
+	}, []);
 
 	function onInputChange(e) {
 		answers[e.target.name - 1] = parseInt(e.target.parentNode.textContent);
