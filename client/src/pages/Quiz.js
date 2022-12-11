@@ -83,7 +83,6 @@ const Quiz = () => {
 					break;
 			}
 		};
-		console.log(sortedList);
 		setResults(sortedList);
 		for(let i = 1; i <= answers.length; i++) {
 			for(let x = 0; x < document.getElementsByName(i).length; x++) {
