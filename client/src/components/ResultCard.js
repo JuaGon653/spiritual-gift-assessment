@@ -19,7 +19,7 @@ const ResultCard = ({ results }) => {
                         }
 					</ul>
                     {
-                        results[0] === "Submit A Test For Results" ? '' : (
+                        results[0] === "Submit A Test For Results  " ? '' : (
                             <form id="result-form" action="/quiz" method='POST'>
                         <div>
                             <input type="text" name="firstname" id="firstname"

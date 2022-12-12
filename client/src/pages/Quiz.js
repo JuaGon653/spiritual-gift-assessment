@@ -5,7 +5,7 @@ import ResultCard from '../components/ResultCard.js';
 const Quiz = () => {
 	const answers = new Array(64);
 	const [errorMessage, setErrorMessage] = useState('');
-	const [results, setResults] = useState(['Submit A Test For Results', 'Submit A Test For Results', 'Submit A Test For Results']);
+	const [results, setResults] = useState(['Submit A Test For Results  ', 'Submit A Test For Results  ', 'Submit A Test For Results  ']);
 
 	useEffect(() => {
 		window.scroll({ top: 0, left: 0 });
