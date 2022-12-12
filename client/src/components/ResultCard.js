@@ -11,7 +11,10 @@ const ResultCard = ({ results }) => {
 					<ul className='list-group'>
                         {
                             results.map((result, index) => {
-                                return <li className='list-group-item' key={index + 1 }>{index + 1}. {result}</li>
+                                return <li className='list-group-item card-list-item' key={index + 1 }>
+                                    <span>{index + 1}. {result.substring(0, result.length - 2)}</span>
+                                    <span>{result.substring(result.length - 2)}</span>
+                                </li>
                             })
                         }
 					</ul>

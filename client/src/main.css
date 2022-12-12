@@ -112,3 +112,7 @@ hr {
     border-radius: 5px;
     padding-left: 8px;
 }
+.card-list-item {
+    display: flex;
+    justify-content: space-between;
+}
