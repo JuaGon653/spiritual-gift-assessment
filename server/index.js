@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
 app.post('/quiz', async (req, res) => {
     try {
         const { firstname, lastname, results } = req.body;
+        const resultsArray = results.split(',');
 
         const auth = new google.auth.GoogleAuth({
             keyFile: "google-credentials.json",
@@ -41,7 +42,7 @@ app.post('/quiz', async (req, res) => {
             valueInputOption: "USER_ENTERED",
             resource: {
                 values: [
-                    [firstname, lastname, results]
+                    [firstname, lastname, resultsArray[0], resultsArray[1], resultsArray[2], resultsArray[3], resultsArray[4], resultsArray[5], resultsArray[6], resultsArray[7], resultsArray[8], resultsArray[9], resultsArray[10], resultsArray[11], resultsArray[12], resultsArray[13], resultsArray[14], resultsArray[15]]
                 ]
             }
         });
